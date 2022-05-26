@@ -1,61 +1,30 @@
 
-// head-simple-slider
+// sidebar
 
-flashSimpleSlider("#headSimpleSlider", {
-	autoplay: true,
-	buttons: true
-});
+const sidebar = () => {
 
-// the-end-of-head-simple-slider
+	const sidebar = document.querySelector('.sidebar');
+	const seeMore = sidebar.querySelector('.form-see-more-btn');
+	const defaultText = seeMore.innerHTML;
+	const dataText = "See Less";
+	const hiddenItems = sidebar.querySelectorAll('.list-dropdown-hidden-item'); 
 
+	const toggle = () => {
 
+		for (let i = 0; i < hiddenItems.length; i++) {
+			
+			hiddenItems[i].classList.contains('fl-show') ? seeMore.innerHTML = defaultText : seeMore.innerHTML = dataText;
 
-// page-first-slider
+			hiddenItems[i].classList.toggle('fl-show');
 
-$('.page-first-slider').slick({
-  dots: false,
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  speed: 300,
-  arrows: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2
-      }
-    }
-  ]  
-});
+		}
 
-// page-first-slider
+	}
 
+	seeMore.addEventListener('click', toggle);
 
+}
 
-// page-second-slider
+sidebar();
 
-$('.page-second-slider').slick({
-  dots: false,
-  infinite: true,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  speed: 300,
-  arrows: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 599,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]  
-});
-
-// page-second-slider
+// the-end-of-sidebar

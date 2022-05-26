@@ -1,17 +1,8 @@
 
-// modal-container
 
-hideModalCOntainer();
+// md-menu
 
-function hideModalCOntainer() {
+mdMenuCloser = document.querySelector('.fl-md-menu-closer');
+mdMenuCloser.addEventListener('click', flashHideMdMenu);
 
-	const modal = document.querySelector('#userModalContainer');
-	const btn = document.querySelector('.user-modal-con-close-btn');
-
-	function hide() { modal.classList.remove('fl-show'); }
-
-	btn.addEventListener('click', hide);
-
-}
-
-// the-end-of-modal-container
+// the-end-of-md-menu
